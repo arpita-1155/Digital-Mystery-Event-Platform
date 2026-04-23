@@ -1,0 +1,174 @@
+/* src/App.css */
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:wght@400;700&display=swap');
+
+:root {
+  --bg-color: #121212; /* Deep charcoal background */
+  --card-bg: #1e1e24; /* Slightly lighter evidence card */
+  --text-primary: #e0e0e0; /* Off-white text for readability */
+  --text-secondary: #a0a0a0; /* Grayer text for less important info */
+  --accent-red: #8a0b0b; /* Dried blood red for accents */
+  --accent-red-hover: #a51515;
+  --highlight-blue: #00adb5; /* A touch of "forensic tech" blue */
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: 'Courier Prime', monospace; /* Looks like an official report */
+  margin: 0;
+  padding: 20px;
+  background-image: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%); /* Subtle vignette */
+  min-height: 100vh;
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4 {
+  font-family: 'Special Elite', cursive; /* Old Typewriter style for titles */
+  letter-spacing: 1px;
+  color: var(--text-primary);
+}
+
+h1.main-title {
+  color: var(--accent-red);
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  margin-bottom: 0.5rem;
+}
+
+/* --- Containers --- */
+.case-file-container {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 30px;
+  border: 1px solid #333;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  position: relative;
+}
+
+/* Add a "TOP SECRET" stamp effect to the container header */
+.case-header {
+  border-bottom: 2px solid var(--accent-red);
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.evidence-card {
+  background-color: var(--card-bg);
+  border-left: 4px solid var(--accent-red); /* Looks like a red tagged file */
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+}
+
+.evidence-card:hover {
+  transform: translateY(-2px); /* Subtle lift effect */
+}
+
+.evidence-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover; /* Ensures images don't stretch weirdly */
+  border-radius: 4px;
+  border: 1px solid #444;
+  filter: sepia(20%) contrast(110%); /* Gives a slight gritty, film-noir look */
+  margin-bottom: 15px;
+}
+
+/* --- Inputs & Buttons --- */
+input[type="text"] {
+  background-color: #2a2a35;
+  border: 1px solid #444;
+  color: var(--highlight-blue);
+  font-family: 'Courier Prime', monospace;
+  font-size: 1.1rem;
+  padding: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--highlight-blue);
+}
+
+.radio-label {
+  display: block;
+  padding: 10px 15px;
+  margin: 5px 0;
+  background-color: rgba(255,255,255,0.05);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.radio-label:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+/* Style for selected radio option */
+.radio-label.selected {
+  background-color: rgba(0, 173, 181, 0.15); /* Subtle blue tint */
+  border-color: var(--highlight-blue);
+  font-weight: bold;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 18px;
+  background-color: var(--accent-red);
+  color: white;
+  font-family: 'Special Elite', cursive;
+  font-size: 1.3rem;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: background-color 0.3s;
+  box-shadow: 0 4px 0px #5a0000; /* retro 3D button push effect */
+}
+
+.submit-btn:hover {
+  background-color: var(--accent-red-hover);
+}
+.submit-btn:active {
+  transform: translateY(4px);
+  box-shadow: none;
+}
+.submit-btn:disabled {
+  background-color: #555;
+  color: #888;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Login Screen Specifics */
+.login-container {
+  max-width: 500px;
+  margin: 100px auto;
+  text-align: center;
+  padding: 40px;
+  background: repeating-linear-gradient(
+    45deg,
+    #1e1e24,
+    #1e1e24 10px,
+    #222229 10px,
+    #222229 20px
+  ); /* Subtle caution stripe texture */
+  border: 3px solid var(--accent-red);
+}
+
+.stamp {
+  color: var(--accent-red);
+  border: 3px solid var(--accent-red);
+  display: inline-block;
+  padding: 5px 15px;
+  transform: rotate(-5deg);
+  font-family: 'Special Elite', cursive;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
